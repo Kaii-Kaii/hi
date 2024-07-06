@@ -1,0 +1,304 @@
+:root {
+	 --primary: #80e36b;
+	 --secondary: #50bc37;
+	 --bubble: #dc7f94;
+	 --blush: #ee9a96;
+	 --sizeMultiplicator: 2;
+}
+ @media (max-width: 1400px), (max-height: 1000px) {
+	 :root {
+		 --sizeMultiplicator: 1;
+	}
+}
+ @media (max-width: 700px), (max-height: 500px) {
+	 :root {
+		 --sizeMultiplicator: 0.5;
+	}
+}
+ @media (max-width: 350px), (max-height: 250px) {
+	 :root {
+		 --sizeMultiplicator: 0.3;
+	}
+}
+ * {
+	 box-sizing: border-box;
+}
+ body {
+	 overflow: hidden;
+}
+ #main {
+	 scale: var(--sizeMultiplicator);
+	 transform-origin: 91% 91%;
+	 bottom: 0;
+	 right: 0;
+	 position: absolute;
+	 padding: 65px 65px 0 0;
+	 margin: 0 -50px -50px 0;
+}
+ #head {
+	 width: 500px;
+	 aspect-ratio: 1;
+	 background-color: var(--primary);
+	 border-radius: 100%;
+	 border: 10px solid black;
+}
+ #eyes {
+	 position: absolute;
+	 top: 300px;
+	 left: 50px;
+	 width: 300px;
+	 height: 50px;
+	 display: flex;
+	 justify-content: space-between;
+	 z-index: 1;
+	 align-items: center;
+}
+ #eyes .eye, #eyes .blush {
+	 width: 50px;
+	 height: 50px;
+	 border-radius: 100%;
+}
+ #eyes .eye {
+	 background-color: black;
+	 animation: blink 10s linear infinite;
+}
+ #eyes .blush {
+	 position: absolute;
+	 background-color: var(--blush);
+	 z-index: -1;
+	 top: 24px;
+}
+ #eyes #blush-0 {
+	 left: -26px;
+}
+ #eyes #blush-1 {
+	 right: -26px;
+}
+ @keyframes blink {
+	 50% {
+		 height: 50px;
+	}
+	 50.1% {
+		 height: 10px;
+	}
+	 50.7% {
+		 height: 50px;
+	}
+	 70% {
+		 height: 50px;
+	}
+	 71% {
+		 height: 10px;
+	}
+	 72% {
+		 height: 50px;
+	}
+	 73% {
+		 height: 50px;
+	}
+	 74% {
+		 height: 10px;
+	}
+	 75% {
+		 height: 50px;
+	}
+}
+ #mouth {
+	 position: absolute;
+	 top: 310px;
+	 left: 190px;
+}
+ #mouth .lip {
+	 width: 25px;
+	 aspect-ratio: 1;
+	 border: 5px solid black;
+	 border-radius: 100%;
+}
+ #lip-1 {
+	 margin-top: -6px;
+	 position: relative;
+	 visibility: hidden;
+	 animation: mouth-show 10s infinite linear;
+}
+ #lip-1:after {
+	 content: "";
+	 position: absolute;
+	 left: 5px;
+	 top: -100%;
+	 height: 25px;
+	 width: 20px;
+	 border-radius: 40%;
+	 background-color: var(--primary);
+}
+ @keyframes mouth-show {
+	 0% {
+		 visibility: visible;
+	}
+	 50% {
+		 visibility: hidden;
+	}
+}
+ .hair {
+	 background-color: var(--secondary);
+	 position: absolute;
+	 border: 10px solid black;
+	 z-index: -1;
+	 border-radius: 50%;
+}
+ #hair-0 {
+	 top: 0px;
+	 left: 220px;
+	 width: 110px;
+	 height: 230px;
+	 rotate: 10deg;
+}
+ #hair-1 {
+	 top: 70px;
+	 left: 350px;
+	 width: 110px;
+	 height: 210px;
+	 rotate: 40deg;
+}
+ #hair-2 {
+	 top: 200px;
+	 left: 400px;
+	 width: 100px;
+	 height: 190px;
+	 rotate: 80deg;
+}
+ #hair-3 {
+	 top: 320px;
+	 left: 380px;
+	 width: 90px;
+	 height: 190px;
+	 rotate: 110deg;
+}
+ #bubble {
+	 aspect-ratio: 1;
+	 position: absolute;
+	 top: 59%;
+	 right: 65%;
+	 border-radius: 100%;
+	 transform: translateY(-50%);
+	 animation: bubbleSize 10s infinite ease-out;
+	 visibility: hidden;
+	 z-index: 2;
+}
+ #bubble:before {
+	 content: "";
+	 position: absolute;
+	 width: 100%;
+	 height: 100%;
+	 background-color: var(--bubble);
+	 border-radius: 100%;
+	 animation: bubbleOpacity 10s infinite ease-out;
+}
+ #bubble:after {
+	 content: "";
+	 position: absolute;
+	 border: 5px solid var(--bubble);
+	 width: 100%;
+	 height: 100%;
+	 box-sizing: border-box;
+	 border-radius: 100%;
+}
+ #highlight {
+	 aspect-ratio: 1;
+	 position: absolute;
+	 width: 100%;
+	 animation: highlightOpacity 10s infinite ease-out;
+}
+ #highlight:before, #highlight:after {
+	 content: "";
+	 background-color: white;
+	 border-radius: 100%;
+	 position: absolute;
+}
+ #highlight:before {
+	 width: 7%;
+	 height: 12%;
+	 top: 10%;
+	 left: 26%;
+	 rotate: 45deg;
+}
+ #highlight:after {
+	 width: 6%;
+	 height: 8%;
+	 top: 26%;
+	 left: 14%;
+	 rotate: 33deg;
+}
+ @keyframes bubbleSize {
+	 0% {
+		 width: 10px;
+		 visibility: visible;
+	}
+	 50% {
+		 visibility: hidden;
+	}
+	 55% {
+		 width: 350px;
+	}
+}
+ @keyframes bubbleOpacity {
+	 0% {
+		 opacity: 0.9;
+	}
+	 50% {
+		 opacity: 0.5;
+	}
+}
+ @keyframes highlightOpacity {
+	 0% {
+		 opacity: 0;
+	}
+	 50% {
+		 opacity: 0.9;
+	}
+}
+ #popped {
+	 background-color: var(--bubble);
+	 opacity: 0.6;
+	 width: 200px;
+	 height: 200px;
+	 scale: 2.8;
+	 transform-origin: 0 0;
+	 left: -24px;
+	 position: absolute;
+	 top: 41px;
+	 z-index: 2;
+	 clip-path: path("M135.6,42.4C146.6,44.6,156.3,53.3,162.7,63.9C169,74.6,172.1,87.3,169.7,98.6C167.3,109.9,159.3,119.8,153.8,131.9C148.2,144,145.1,158.4,136.6,163.6C128,168.9,114,164.9,101.1,163C88.2,161,76.5,161.1,66.4,156.7C56.2,152.4,47.7,143.8,38.5,133.6C29.2,123.4,19.3,111.7,18.3,99.4C17.4,87.2,25.4,74.4,33.1,61.5C40.7,48.6,48.1,35.7,59.2,33.6C70.3,31.4,85.1,40,98.7,42.2C112.3,44.4,124.7,40.2,135.6,42.4Z");
+	 visibility: hidden;
+	 animation: popped 10s infinite;
+}
+ @keyframes popped {
+	 50% {
+		 visibility: hidden;
+	}
+	 100% {
+		 visibility: visible;
+	}
+}
+ #shock {
+	 position: absolute;
+	 width: 200px;
+	 height: 200px;
+	 background-color: yellow;
+	 top: 160px;
+	 left: -170px;
+	 clip-path: polygon(50% 0%, 62% 29%, 98% 35%, 71% 41%, 89% 63%, 47% 52%, 31% 84%, 29% 42%, 9% 31%, 43% 22%);
+	 visibility: hidden;
+	 animation: shock 10s infinite;
+}
+ @keyframes shock {
+	 49.7% {
+		 visibility: hidden;
+	}
+	 50.3% {
+		 visibility: visible;
+	}
+	 50.4% {
+		 visibility: hidden;
+	}
+}
+ 
