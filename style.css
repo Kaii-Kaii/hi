@@ -1,209 +1,49 @@
-body {
-	 overflow: hidden;
+html, body {
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
 }
- .window__scene {
-	 position: relative;
-	 width: 200vw;
-	 height: 100vh;
-	 overflow: hidden;
-	 background: #e08183 url(data:image/svg+xml;
-	base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI3OTguNzAycHgiIGhlaWdodD0iNzk4LjcwMnB4IiB2aWV3Qm94PSIwIDAgNzk4LjcwMiA3OTguNzAyIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA3OTguNzAyIDc5OC43MDIiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxnPjxyZWN0IGZpbGw9IiNFMDgyODMiIHdpZHRoPSI3OTguNzAyIiBoZWlnaHQ9Ijc5OC43MDIiLz48Zz48cGF0aCBmaWxsPSIjRTY5QzlEIiBkPSJNMTcxLjMzOSwxODAuMDUxaC02OS4xODVjLTYuNjE4LDAtMTIuMDMzLDUuNDE0LTEyLjAzMywxMi4wMzJ2MjIuNTZjMCw2LjYxOCw1LjQxNSwxMi4wMzMsMTIuMDMzLDEyLjAzM2g2OS4xODVjNi42MTcsMCwxMi4wMzItNS40MTUsMTIuMDMyLTEyLjAzM3YtMjIuNTZDMTgzLjM3MiwxODUuNDY1LDE3Ny45NTcsMTgwLjA1MSwxNzEuMzM5LDE4MC4wNTF6Ii8+PHBhdGggZmlsbD0iI0U2OUM5RCIgZD0iTTIwMi44ODcsMTIzLjM3Nmg2OS4xODVjNi42MTgsMCwxMi4wMzMtNS40MTQsMTIuMDMzLTEyLjAzMnYtMjIuNTZjMC02LjYxOS01LjQxNS0xMi4wMzMtMTIuMDMzLTEyLjAzM2gtNjkuMTg1Yy02LjYxNywwLTEyLjAzMiw1LjQxNC0xMi4wMzIsMTIuMDMzdjIyLjU2QzE5MC44NTQsMTE3Ljk2MiwxOTYuMjcsMTIzLjM3NiwyMDIuODg3LDEyMy4zNzZ6Ii8+PHBhdGggZmlsbD0iI0U2OUM5RCIgZD0iTTIxNy45NjQsMTI3LjcxMmgtNjkuMTg1Yy02LjYxOCwwLTEyLjAzMyw1LjQxNS0xMi4wMzMsMTIuMDMydjIyLjU2MWMwLDYuNjE4LDUuNDE1LDEyLjAzMiwxMi4wMzMsMTIuMDMyaDY5LjE4NWM2LjYxOCwwLDEyLjAzMi01LjQxNSwxMi4wMzItMTIuMDMydi0yMi41NjFDMjI5Ljk5NiwxMzMuMTI3LDIyNC41ODIsMTI3LjcxMiwyMTcuOTY0LDEyNy43MTJ6Ii8+PHBhdGggZmlsbD0iI0U2OUM5RCIgZD0iTTEyOS43MywxNjIuMzA1di0yMi41NjFjMC02LjYxOC01LjQxNS0xMi4wMzItMTIuMDMyLTEyLjAzMkg0OC41MTNjLTYuNjE4LDAtMTIuMDMyLDUuNDE1LTEyLjAzMiwxMi4wMzJ2MjIuNTYxYzAsNi42MTgsNS40MTQsMTIuMDMyLDEyLjAzMiwxMi4wMzJoNjkuMTg2QzEyNC4zMTYsMTc0LjMzNywxMjkuNzMsMTY4LjkyMywxMjkuNzMsMTYyLjMwNXoiLz48cGF0aCBmaWxsPSIjRTY5QzlEIiBkPSJNNTE1LjYwNCwxMDcuOTIxdjIyLjU2MWMwLDYuNjE4LDUuNDE1LDEyLjAzMiwxMi4wMzIsMTIuMDMyaDY5LjE4NmM2LjYxOCwwLDEyLjAzMi01LjQxNSwxMi4wMzItMTIuMDMydi0yMi41NjFjMC02LjYxOC01LjQxNC0xMi4wMzItMTIuMDMyLTEyLjAzMmgtNjkuMTg2QzUyMS4wMTksOTUuODg5LDUxNS42MDQsMTAxLjMwMyw1MTUuNjA0LDEwNy45MjF6Ii8+PHBhdGggZmlsbD0iI0U2OUM5RCIgZD0iTTYyNy4zNjgsMTQyLjUxNGg2OS4xODVjNi42MTgsMCwxMi4wMzQtNS40MTUsMTIuMDM0LTEyLjAzMnYtMjIuNTYxYzAtNi42MTgtNS40MTYtMTIuMDMyLTEyLjAzNC0xMi4wMzJoLTY5LjE4NWMtNi42MTksMC0xMi4wMzIsNS40MTUtMTIuMDMyLDEyLjAzMnYyMi41NjFDNjE1LjMzNSwxMzcuMDk5LDYyMC43NDksMTQyLjUxNCw2MjcuMzY4LDE0Mi41MTR6Ii8+PHBhdGggZmlsbD0iI0U2OUM5RCIgZD0iTTU3NC4yNjEsMTU1LjI4NGMtNi42MTcsMC0xMi4wMzEsNS40MTUtMTIuMDMxLDEyLjAzM3YyMi41NjFjMCw2LjYxNyw1LjQxNCwxMi4wMzIsMTIuMDMxLDEyLjAzMmg2OS4xODdjNi42MTcsMCwxMi4wMzEtNS40MTUsMTIuMDMxLTEyLjAzMnYtMjIuNTYxYzAtNi42MTgtNS40MTQtMTIuMDMzLTEyLjAzMS0xMi4wMzNINTc0LjI2MXoiLz48cGF0aCBmaWxsPSIjRTY5QzlEIiBkPSJNMzU0LjIwMyw0MTMuMDR2LTIyLjU2MWMwLTYuNjE4LTUuNDE0LTEyLjAzMi0xMi4wMzItMTIuMDMyaC02OS4xODZjLTYuNjE3LDAtMTIuMDMyLDUuNDE1LTEyLjAzMiwxMi4wMzJ2MjIuNTYxYzAsNi42MTcsNS40MTUsMTIuMDMyLDEyLjAzMiwxMi4wMzJoNjkuMTg2QzM0OC43ODksNDI1LjA3MiwzNTQuMjAzLDQxOS42NTcsMzU0LjIwMyw0MTMuMDR6Ii8+PHBhdGggZmlsbD0iI0U2OUM5RCIgZD0iTTQ0MS45MDEsMzc4LjQ0N2gtNjkuMTg1Yy02LjYxOSwwLTEyLjAzMiw1LjQxNS0xMi4wMzIsMTIuMDMydjIyLjU2MWMwLDYuNjE3LDUuNDEzLDEyLjAzMiwxMi4wMzIsMTIuMDMyaDY5LjE4NWM2LjYxOCwwLDEyLjAzNC01LjQxNSwxMi4wMzQtMTIuMDMydi0yMi41NjFDNDUzLjkzNSwzODMuODYxLDQ0OC41MTksMzc4LjQ0Nyw0NDEuOTAxLDM3OC40NDd6Ii8+PHBhdGggZmlsbD0iI0U2OUM5RCIgZD0iTTM4OC43OTYsNDM3Ljg0MkgzMTkuNjFjLTYuNjE3LDAtMTIuMDMxLDUuNDE0LTEyLjAzMSwxMi4wMzN2MjIuNTYxYzAsNi42MTcsNS40MTQsMTIuMDMxLDEyLjAzMSwxMi4wMzFoNjkuMTg3YzYuNjE3LDAsMTIuMDMxLTUuNDE0LDEyLjAzMS0xMi4wMzF2LTIyLjU2MUM0MDAuODI4LDQ0My4yNTYsMzk1LjQxNCw0MzcuODQyLDM4OC43OTYsNDM3Ljg0MnoiLz48cGF0aCBmaWxsPSIjRTY5QzlEIiBkPSJNNzQzLjE3Nyw2NTYuMTg4aC02OS4xODVjLTYuNjE5LDAtMTIuMDMzLDUuNDE1LTEyLjAzMywxMi4wMzJ2MjIuNTZjMCw2LjYyLDUuNDE0LDEyLjAzMiwxMi4wMzMsMTIuMDMyaDY5LjE4NWM2LjYxNywwLDEyLjAzMy01LjQxMiwxMi4wMzMtMTIuMDMydi0yMi41NkM3NTUuMjEsNjYxLjYwMyw3NDkuNzk0LDY1Ni4xODgsNzQzLjE3Nyw2NTYuMTg4eiIvPjxwYXRoIGZpbGw9IiNFNjlDOUQiIGQ9Ik02OTYuNTUyLDcxMS4zMzNoLTY5LjE4NWMtNi42MTksMC0xMi4wMzIsNS40MTUtMTIuMDMyLDEyLjAzMnYyMi41NjFjMCw2LjYxNyw1LjQxMywxMi4wMzEsMTIuMDMyLDEyLjAzMWg2OS4xODVjNi42MTgsMCwxMi4wMzEtNS40MTQsMTIuMDMxLTEyLjAzMXYtMjIuNTYxQzcwOC41ODMsNzE2Ljc0OCw3MDMuMTcsNzExLjMzMyw2OTYuNTUyLDcxMS4zMzN6Ii8+PHBhdGggZmlsbD0iI0U2OUM5RCIgZD0iTTU5Ni44MjIsNzExLjMzM2gtNjkuMTg2Yy02LjYxNywwLTEyLjAzMiw1LjQxNS0xMi4wMzIsMTIuMDMydjIyLjU2MWMwLDYuNjE3LDUuNDE1LDEyLjAzMSwxMi4wMzIsMTIuMDMxaDY5LjE4NmM2LjYxOCwwLDEyLjAzMi01LjQxNCwxMi4wMzItMTIuMDMxdi0yMi41NjFDNjA4Ljg1NCw3MTYuNzQ4LDYwMy40NCw3MTEuMzMzLDU5Ni44MjIsNzExLjMzM3oiLz48cGF0aCBmaWxsPSIjRTY5QzlEIiBkPSJNNTU0LjkyNiw3OS41OTdWNTcuMDM2YzAtNi42MTctNS40MTUtMTIuMDMyLTEyLjAzMi0xMi4wMzJoLTY5LjE4N2MtNi42MTcsMC0xMi4wMzEsNS40MTUtMTIuMDMxLDEyLjAzMnYyMi41NjFjMCw2LjYxOCw1LjQxNCwxMi4wMzIsMTIuMDMxLDEyLjAzMmg2OS4xODdDNTQ5LjUxMSw5MS42MjksNTU0LjkyNiw4Ni4yMTUsNTU0LjkyNiw3OS41OTd6Ii8+PC9nPjwvZz48L3N2Zz4=) repeat;
-	 background-size: 30%;
+
+.container {
+    position: relative;
 }
- .window__wrapper {
-	 position: absolute;
-	 top: 50%;
-	 left: 150vw;
-	 transform: translate(-50%, -50%);
+
+canvas {
+    display: block;
 }
- svg:not(:root) {
-	 overflow: visible;
-	 display: block;
-	 width: 200vw;
+
+.name {
+    font-family: sans-serif;
+    position: absolute;
+    top: 30%;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    text-align: center;
+    font-size: 20px;
+    text-shadow: 0 0 3px #ffffff;
+    user-select: none;
+    pointer-events: none;
 }
- .btn-start {
-	 transform: translateX(-100vw);
+
+.name span {
+    background-color: rgba(255, 255, 255, .6);
 }
- .btn-start__neon {
-	 animation: btn-start__neon 1s steps(1, end) infinite;
+
+.render-toggle {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    font-family: sans-serif;
+    font-size: 15px;
+    text-shadow: 0 0 4px #ffffff;
+    user-select: none;
+    padding: 0 0 15px 20px;
+    cursor: pointer;
+    text-decoration: underline;
 }
- #start:target .window__scene {
-	 animation: wall 8s linear forwards 2s, wall--ease 6s ease-out forwards 6.7s;
-}
- #start:target .man {
-	 transform: translateX(calc(-140vw));
-	 animation: man 20s linear forwards;
-}
- #start:target .man .man__bounce {
-	 animation: man--bounce 0.3s ease-in-out alternate infinite;
-}
- #start:target .man .eye {
-	 animation: man__eye 3s steps(4, end) infinite;
-}
- #start:target .man .arm__right {
-	 transform-origin: 90px 610px;
-	 animation: man__arm--right 0.6s ease-in-out alternate infinite;
-}
- #start:target .man .arm__left {
-	 transform-origin: 130px 550px;
-	 animation: man__arm--left 0.6s ease-in-out alternate infinite;
-}
- #start:target .man .leg__right {
-	 transform-origin: 0px 500px;
-	 animation: man__leg--right 0.6s ease-out alternate infinite;
-}
- #start:target .man .leg__left {
-	 transform-origin: 0px 500px;
-	 animation: man__leg--left 0.6s ease-out alternate infinite;
-}
- #start:target .window--left, #start:target .window--right {
-	 perspective: 1000px;
-	 transform-style: preserve-3d;
-	 backface-visibility: hidden;
-}
- #start:target .window--left {
-	 transform-origin: 250px 500px !important;
-	 animation: window--left 1s ease forwards 12.75s;
-}
- #start:target .window--left .window__shadow {
-	 display: none;
-	 opacity: 0;
-	 transform-origin: 300px 500px;
-	 animation: window__shadow 0.3s ease forwards 13.5s;
-}
- #start:target .window--right {
-	 transform-origin: 550px 500px !important;
-	 animation: window--right 1s ease forwards 12.75s;
-}
- #start:target .window--right .window__shadow {
-	 display: none;
-	 opacity: 0;
-	 transform-origin: 550px 500px;
-	 animation: window__shadow 0.3s ease forwards 13.5s;
-}
- #start:target .window__shadow {
-	 transform: scaleX(0);
-}
- #start:target .flower1 {
-	 transform: translateY(40px) scale(0.1);
-	 transform-origin: 50% 65%;
-	 animation: flowers 0.5s ease forwards 12.55s;
-}
- #start:target .flower2 {
-	 transform: translateY(40px) scale(0.1);
-	 transform-origin: 50% 65%;
-	 animation: flowers 0.5s ease forwards 12.65s;
-}
- #start:target .flower3 {
-	 transform: translateY(40px) scale(0.1);
-	 transform-origin: 50% 65%;
-	 animation: flowers 0.5s ease forwards 12.75s;
-}
- #start:target .flower4 {
-	 transform: translateY(40px) scale(0.1);
-	 transform-origin: 50% 65%;
-	 animation: flowers 0.5s ease forwards 12.85s;
-}
- #start:target .flower5 {
-	 transform: translateY(40px) scale(0.1);
-	 transform-origin: 50% 65%;
-	 animation: flowers 0.5s ease forwards 12.95s;
-}
- #start:target .flower6 {
-	 transform: translateY(40px) scale(0.1);
-	 transform-origin: 50% 65%;
-	 animation: flowers 0.5s ease forwards 13.05s;
-}
- #start:target .flower7 {
-	 transform: translateY(40px) scale(0.1);
-	 transform-origin: 50% 65%;
-	 animation: flowers 0.5s ease forwards 13.15s;
-}
- #start:target .flower8 {
-	 transform: translateY(40px) scale(0.1);
-	 transform-origin: 50% 65%;
-	 animation: flowers 0.5s ease forwards 13.25s;
-}
- @keyframes btn-start__neon {
-	 0%, 100% {
-		 opacity: 1;
-	}
-	 50% {
-		 opacity: 0.5;
-	}
-}
- @keyframes flowers {
-	 to {
-		 transform-origin: bottom center;
-		 transform: translateY(0) scale(1);
-	}
-}
- @keyframes window--left {
-	 to {
-		 transform: perspective(1000px) rotateY(-180deg);
-	}
-}
- @keyframes window--right {
-	 to {
-		 transform: perspective(1000px) rotateY(180deg);
-	}
-}
- @keyframes window__shadow {
-	 to {
-		 transform: scaleX(1);
-	}
-}
- @keyframes wall {
-	 to {
-		 transform: translateX(-100vw);
-	}
-}
- @keyframes wall--ease {
-	 from {
-		 transform: translateX(-59vw);
-	}
-	 to {
-		 transform: translateX(-100vw);
-	}
-}
- @keyframes man {
-	 to {
-		 transform: translateX(2000px);
-	}
-}
- @keyframes man--bounce {
-	 to {
-		 transform: translateY(-15px);
-	}
-}
- @keyframes man__eye {
-	 0%, 4% {
-		 transform: scaleY(0.2);
-		 transform-origin: 0 500px;
-	}
-	 2%, 6% {
-		 transform: scaleY(1);
-		 transform-origin: 0 500px;
-	}
-}
- @keyframes man__arm--right {
-	 to {
-		 transform: rotate(-40deg);
-	}
-}
- @keyframes man__arm--left {
-	 to {
-		 transform: rotate(40deg);
-	}
-}
- @keyframes man__leg--right {
-	 to {
-		 transform: rotate(50deg);
-	}
-}
- @keyframes man__leg--left {
-	 to {
-		 transform: rotate(-30deg);
-	}
-}
- 
