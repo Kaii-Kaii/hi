@@ -1,200 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis&display=swap");
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
-}
-
-html {
-  width: 100%;
-  height: 100%;
-  font-size: 18px;
 }
 
 body {
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: "Dosis", sans-serif;
+  overflow: hidden;
+  background-color: #e6e2ca;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+body .container {
+  padding: 0;
+  margin: 0;
+  margin: auto;
+  min-height: 100%;
+  max-width: 900px;
   overflow: hidden;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  box-shadow: 0.02em 0.02em 1.5em #0005;
 }
-
-.info {
-  position: fixed;
-  z-index: -1;
-  color: #86c5da;
-  font-size: 2rem;
-}
-.info span {
-  opacity: 0.2;
-}
-
-.scene {
-  width: 100%;
-  height: 100%;
-  background: lightblue;
-  z-index: -2;
-  box-shadow: inset 0 -1rem 0 #27ae60;
-}
-.scene .flower {
-  position: absolute;
-  margin: auto;
-  bottom: 0;
-  left: 0;
-  background: #27ae60;
-  width: 1vmin;
-  height: 20vmin;
-}
-.scene .flower .flowerhead {
-  position: absolute;
-  bottom: 100%;
-  width: 600%;
-  height: 80%;
-  background: crimson;
-  border-top-right-radius: 50%;
-  border-top-left-radius: 50%;
-  border-bottom-right-radius: 35% 40%;
-  border-bottom-left-radius: 35% 40%;
-  box-shadow: inset 0 -20vmin 20vmin rgba(0, 0, 0, 0.4);
-  left: calc(-300% + .5vmin);
-}
-.scene .flower .flowerhead:before, .scene .flower .flowerhead:after {
-  content: "";
-  position: absolute;
-  bottom: -5%;
-  width: 100%;
-  height: 120%;
-  border-top-right-radius: 50%;
-  border-top-left-radius: 50%;
-  border-bottom-right-radius: 35% 40%;
-  border-bottom-left-radius: 35% 40%;
-  background: #7f0c23;
-  background: inherit;
-  transform-origin: 50% 100%;
-}
-.scene .flower .flowerhead:before {
-  left: -25%;
-  transform: rotate(-10deg);
-}
-.scene .flower .flowerhead:after {
-  right: -25%;
-  transform: rotate(10deg);
-}
-
-.bee {
-  width: 200px;
-  height: 140px;
-  background: gold;
-  border-radius: 50%;
-  position: absolute;
-  background-image: linear-gradient(90deg, transparent 50%, black 50%);
-  background-size: 25% 25%;
-}
-.bee--right {
-  transform: scaleX(-1);
-}
-.bee:before, .bee:after {
-  content: "";
-  position: absolute;
-  margin: auto;
-  opacity: 0.6;
-}
-.bee:before {
-  width: 40%;
-  padding-top: 80%;
-  background: #CFFFFF;
-  border-radius: 10000px;
-  bottom: 90%;
-  left: 0;
-  right: 10%;
-  transform: rotate(20deg);
-  transform-origin: 50% 100%;
-  z-index: -1;
-  -webkit-animation: flap 0.05s linear infinite alternate;
-          animation: flap 0.05s linear infinite alternate;
-}
-.bee:after {
-  width: 40%;
-  padding-top: 80%;
-  background: #CFFFFF;
-  border-radius: 10000px;
-  bottom: 90%;
-  left: 10%;
-  right: 0;
-  transform: rotate(20deg);
-  transform-origin: 50% 100%;
-  -webkit-animation: flap1 0.05s linear infinite alternate;
-          animation: flap1 0.05s linear infinite alternate;
-}
-@-webkit-keyframes flap {
-  from {
-    transform: rotate(20deg) scaleY(1);
-  }
-  to {
-    transform: rotate(-25deg) scaleY(-1);
-  }
-}
-@keyframes flap {
-  from {
-    transform: rotate(20deg) scaleY(1);
-  }
-  to {
-    transform: rotate(-25deg) scaleY(-1);
-  }
-}
-@-webkit-keyframes flap1 {
-  from {
-    transform: rotate(35deg) scaleY(1);
-  }
-  to {
-    transform: rotate(-10deg) scaleY(-1);
-  }
-}
-@keyframes flap1 {
-  from {
-    transform: rotate(35deg) scaleY(1);
-  }
-  to {
-    transform: rotate(-10deg) scaleY(-1);
-  }
-}
-.bee .head {
-  position: absolute;
-  margin: auto;
-  width: 50%;
-  padding-top: 50%;
-  background: #000;
-  top: 50%;
-  left: -30%;
-  transform: translateY(-50%);
-  border-radius: 50%;
-}
-.bee .head:before, .bee .head:after {
-  content: "";
-  position: absolute;
-  margin: auto;
-}
-.bee .head:before {
-  width: 40%;
-  padding-top: 40%;
-  top: 50%;
-  left: 15%;
-  transform: translateY(-50%);
-  border-radius: 50%;
-  background: radial-gradient(circle, black 40%, white 50%);
-}
-.bee .head:after {
-  width: 5%;
-  padding-top: 40%;
-  background: #000;
-  border-radius: 10000px;
-  bottom: 90%;
-  left: 0;
-  right: 0;
-  transform: rotate(20deg);
-  transform-origin: 0 100%;
+body .container canvas {
+  outline: none;
 }
