@@ -1,15 +1,105 @@
-* {
-  box-sizing: border-box;
+body {
+  margin: 0;
+  padding: 0;
+  cursor: default;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  background-color: #b6c6d3;
 }
 
-html,
-body {
-  height: 100%;
+svg {
+  height: 99vh;
+  max-height: 100vw;
+}
+.no-fill, .cactus-prickle {
+  fill: none;
 }
 
-body {
-  overflow: hidden;
-  display: grid;
-  color: white;
-  background: black;
+.replay-text {
+  fill: #ffffff;
+  font-size: 24px;
+  font-family: Helvetica, sans, monospace, sans-serif;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.back {
+  fill: #b8c6d1;
+}
+
+.pot {
+  fill: #e3e5e1;
+}
+.pot-lighter {
+  fill: #edeeeb;
+}
+.pot-lightest {
+  fill: #f6f6f4;
+}
+.pot-top-lightest {
+  fill: #fff;
+}
+.pot-top-soil {
+  fill: #afb4a6;
+}
+.pot-shadow {
+  fill: #a1b4bd;
+}
+
+.haworthia {
+  -webkit-clip-path: url(#haworthia-clip-path);
+          clip-path: url(#haworthia-clip-path);
+  fill: #7ea981;
+}
+.haworthia-strip {
+  fill: #c7e5ce;
+}
+.haworthia-ouline {
+  fill: #709c74;
+  opacity: 0.5;
+}
+
+.cactus {
+  -webkit-clip-path: url(#cactus-clip-path);
+          clip-path: url(#cactus-clip-path);
+  fill: #5b9a7c;
+}
+.cactus-lighter {
+  fill: #63a689;
+}
+.cactus-lightest {
+  fill: #6fb293;
+}
+.cactus-prickle {
+  stroke: #4c8165;
+  stroke-linecap: round;
+  stroke-miterlimit: 10;
+  stroke-width: 3px;
+}
+.flower-root {
+  fill: #71d1a8;
+}
+.flower-lighter {
+  fill: #efad96;
+}
+.flower {
+  fill: #e19680;
+}
+.flower-back {
+  fill: #d38570;
+}
+
+.echeveria {
+  -webkit-clip-path: url(#echeveria-clip-path);
+          clip-path: url(#echeveria-clip-path);
+  fill: #78b1b5;
+}
+.echeveria-darker {
+  fill: #6ea8a8;
+}
+.echeveria-lighter {
+  fill: #88bfbf;
 }
