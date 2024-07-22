@@ -1,102 +1,188 @@
-*, *::before, *::after {
-  padding: 0;
-  margin: 0 auto;
-  box-sizing: border-box;
+body, html {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: #cedeff;
 }
 
-body {
-background-color: #000;
-color: #fff;
-min-height: 100vh;
-display: grid;
-place-items: center;
-perspective: 800px;
-overflow: hidden;
-
-*:not(:empty) {
-  transform-style: preserve-3d;
-}
-}
-
-.scene {
-position: relative;
--webkit-animation: sceneRotate 42s infinite linear;
-        animation: sceneRotate 42s infinite linear;
-}
-
-.floor {
-position: absolute;
-inset: -60em;
-background-color: #141;
-background-image:
-  radial-gradient(closest-side, transparent, #000),
-  radial-gradient(Black, 1%, transparent),
-  repeating-linear-gradient(0deg, transparent 0, #0001, transparent 1em),
-  repeating-linear-gradient(60deg, transparent 0, #0001, transparent 1em),
-  repeating-linear-gradient(120deg, transparent 0, #0001, transparent 1em);
-transform: rotateX(90deg);
-}
-
-.flower {
-position: absolute;
-}
-
-.petal {
-position: absolute;
-left: -1em; top: 0;
-width: 2em; height: 0;
--webkit-animation: petalScale 8s calc(-8s / 36 * var(--p)) infinite;
-        animation: petalScale 8s calc(-8s / 36 * var(--p)) infinite;
---background-color: hsl(calc(var(--p) * 10) 80% 50%);
-
-i {
+.george {
+  text-align: center;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
   position: absolute;
-  left: 0; bottom: 100%;
-  width: 2em; height: 2em;
-  background-image: linear-gradient(45deg, transparent 5em, var(--background-color) 15em);
-  background-size: 100% 20em;
-  transform-origin: bottom;
-  -webkit-animation: petal 8s calc(-8s / 36 * var(--p)) infinite ease-in-out;
-          animation: petal 8s calc(-8s / 36 * var(--p)) infinite ease-in-out;
-  
-  i:empty {
-    border-radius: 100% 100% 0 0;
+  padding-top: 30vh;
+}
+.george .pot_top {
+  width: 30vh;
+  height: 0;
+  border-top: 5vh solid #dd8740;
+  border-left: 0.9090909091vh solid transparent;
+  border-right: 0.9090909091vh solid transparent;
+}
+.george .pot_body {
+  width: 20vh;
+  height: 0;
+  border-top: 17vh solid #e5a26b;
+  border-left: 4vh solid transparent;
+  border-right: 4vh solid transparent;
+}
+.george .pot_plate {
+  width: 23vh;
+  height: 0;
+  border-top: 4vh solid #dd8740;
+  border-left: 0.8vh solid transparent;
+  border-right: 0.8vh solid transparent;
+}
+.george .george_flower {
+  position: absolute;
+  top: 0;
+  left: 11vh;
+  height: 6.6666666667vh;
+  width: 5vh;
+  border-radius: 0 100% 0 100%;
+  background-color: #e2641b;
+}
+.george .george_flower:before {
+  content: "";
+  top: 0;
+  left: 5vh;
+  transform: rotate(70deg);
+  position: absolute;
+  height: 6.6666666667vh;
+  width: 5vh;
+  border-radius: 0 100% 0 100%;
+  background-color: #e2641b;
+}
+.george .george_head {
+  position: absolute;
+  z-index: -1;
+  top: 6.6666666667vh;
+  left: 2vh;
+  height: 30vh;
+  width: 28vh;
+  background-color: #98d30c;
+  border-radius: 100%;
+}
+.george .george_head .line {
+  height: 30vh;
+  width: 1vh;
+  background-color: #ccf668;
+  position: absolute;
+  left: 13vh;
+}
+.george .george_head:before {
+  content: "";
+  display: block;
+  height: 30vh;
+  width: 20.7407407407vh;
+  border: solid 1vh #ccf668;
+  border-radius: 100%;
+  position: absolute;
+  left: 2.5vh;
+}
+.george .george_head:after {
+  content: "";
+  display: block;
+  height: 30vh;
+  width: 9.3333333333vh;
+  border: solid 1vh #ccf668;
+  border-radius: 100%;
+  position: absolute;
+  left: 8vh;
+}
+.george .george_head .eye {
+  height: 8vh;
+  width: 8vh;
+  position: absolute;
+  background-color: #464d5b;
+  border-radius: 100%;
+  z-index: 1;
+  top: 10vh;
+  left: 0;
+}
+.george .george_head .eye:before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 1.6666666667vh;
+  width: 1.6666666667vh;
+  background-color: #ffffff;
+  border-radius: 100%;
+  bottom: 1vh;
+  right: 1.6666666667vh;
+  -webkit-animation: shimmer 0.25s infinite alternate;
+          animation: shimmer 0.25s infinite alternate;
+}
+.george .george_head .eye:after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 5vh;
+  width: 5vh;
+  background-color: #ffffff;
+  border-radius: 100%;
+  bottom: 2vh;
+  right: 2vh;
+  -webkit-animation: shimmer 0.25s infinite alternate;
+          animation: shimmer 0.25s infinite alternate;
+}
+.george .george_head .eye:last-of-type {
+  left: 11.4285714286vh;
+}
+.george .george_head .cheek {
+  height: 2.5vh;
+  width: 5.7142857143vh;
+  border-radius: 60%;
+  background-color: #f2a4ca;
+  position: absolute;
+  top: 16.6666666667vh;
+  left: -2vh;
+  z-index: 5;
+}
+.george .george_head .cheek:after {
+  content: "";
+  height: 2.5vh;
+  width: 5.7142857143vh;
+  border-radius: 60%;
+  background-color: #f2a4ca;
+  position: absolute;
+  left: 17.3913043478vh;
+  z-index: 5;
+}
+.george .shadow {
+  height: 5vh;
+  width: 60vh;
+  position: absolute;
+  bottom: -2.5vh;
+  right: -15vh;
+  background-color: #464d5b;
+  opacity: 0.25;
+  border-radius: 100%;
+  z-index: -10;
+}
+
+@-webkit-keyframes shimmer {
+  0% {
+    transform: translateX(-0.0666666667vh) translateY(0.0666666667vh);
+  }
+  50% {
+    transform: translateX(-0.0666666667vh) translateY(-0.0666666667vh);
+  }
+  100% {
+    transform: translateX(0.0666666667vh) translateY(0.0666666667vh);
   }
 }
-}
 
-@-webkit-keyframes sceneRotate {
-from { transform: translateY(5em) rotateX(-30deg) rotateY(0deg); }
-to { transform: translateY(5em) rotateX(-30deg) rotateY(-360deg); }
-}
-
-@keyframes sceneRotate {
-from { transform: translateY(5em) rotateX(-30deg) rotateY(0deg); }
-to { transform: translateY(5em) rotateX(-30deg) rotateY(-360deg); }
-}
-
-@-webkit-keyframes petalScale {
-0% { transform: rotateY(calc(var(--p) * 42deg)) rotateX(-90deg) scale(0); }
-100% { transform: rotateY(calc(var(--p) * 42deg)) rotateX(-90deg) scale(1); }
-}
-
-@keyframes petalScale {
-0% { transform: rotateY(calc(var(--p) * 42deg)) rotateX(-90deg) scale(0); }
-100% { transform: rotateY(calc(var(--p) * 42deg)) rotateX(-90deg) scale(1); }
-}
-
-@-webkit-keyframes petal {
-0% { transform: rotateX(45deg); }
-100% { transform: rotateX(0deg); }
-
-0%, 60%  { background-position-y: 0; }
-100% { background-position-y: 100%; }
-}
-
-@keyframes petal {
-0% { transform: rotateX(45deg); }
-100% { transform: rotateX(0deg); }
-
-0%, 60%  { background-position-y: 0; }
-100% { background-position-y: 100%; }
+@keyframes shimmer {
+  0% {
+    transform: translateX(-0.0666666667vh) translateY(0.0666666667vh);
+  }
+  50% {
+    transform: translateX(-0.0666666667vh) translateY(-0.0666666667vh);
+  }
+  100% {
+    transform: translateX(0.0666666667vh) translateY(0.0666666667vh);
+  }
 }
